@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imooc.sm.dao.JdDao">
+    <resultMap id="resultMap" type="jd">
+        <id property="id" column="id" javaType="Integer"/>
+        <result property="num" column="num" javaType="String"/>
+        <result property="downdate" column="downdate" javaType="java.util.Date"/>
+        <result property="updated" column="updated" javaType="java.util.Date"/>
+        <result property="chanpinname" column="chanpinname" javaType="String"/>
+        <result property="scjd" column="scjd" javaType="String"/>
+        <result property="commitdate" column="commitdate" javaType="java.util.Date"/>
+     </resultMap>
+
+    <select id="selectAll"  resultMap="resultMap">
+        select distinct num,downdate,updated,chanpinname from jd
+    </select>
+    <select id="selectScjd"  resultMap="resultMap">
+        select scjd from jd
+    </select>
+
+</mapper>
